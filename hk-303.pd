@@ -1,14 +1,14 @@
-#N canvas 136 229 1436 777 10;
+#N canvas 173 183 1436 777 10;
 #X obj 138 71 mod 8;
-#X obj 477 76 tgl 15 0 empty empty on/off 17 7 0 10 -262144 -1 -1 0
+#X obj 477 76 tgl 30 0 empty empty on/off 17 7 0 10 -258113 -1 -1 0
 1;
 #X obj 138 54 f;
 #X obj 520 111 metro 500;
 #X obj 160 54 + 1;
 #X floatatom 172 71 5 0 0 0 - - -;
 #X floatatom 516 22 5 100 1000 0 tempo_click_here lbtempo tempo;
-#X obj 138 88 hradio 15 1 0 8 empty empty empty 0 -8 0 8 -262144 -1
--1 0;
+#X obj 138 88 hradio 30 1 0 8 empty empty empty 0 -8 0 8 -204800 -1
+-1 5;
 #X obj 150 162 select 0 1 2 3 4 5 6 7;
 #X text 420 203 midi 60 = c;
 #X floatatom 41 222 5 30 90 0 - tone1 -;
@@ -36,10 +36,10 @@
 #X obj 370 236 mtof;
 #X obj 355 253 f;
 #X obj 246 717 dac~;
-#X floatatom 200 112 5 0 0 0 - - -;
+#X floatatom 200 132 5 0 0 0 - - -;
 #X floatatom 216 323 5 0 0 0 - - -;
 #X floatatom 235 496 5 0 0 0 - - -;
-#X obj 368 433 vradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
+#X obj 368 433 vradio 30 1 0 2 empty empty empty 0 -8 0 10 -191407
 -1 -1 0;
 #X obj 289 496 *~;
 #X obj 213 496 *~;
@@ -49,8 +49,8 @@
 #X text 251 323 frequency;
 #X obj 290 452 square;
 #X obj 214 452 saw;
-#X obj 516 259 hsl 128 15 0 1 0 0 empty empty attack/release -2 -8
-0 10 -262144 -1 -1 0 1;
+#X obj 516 259 hsl 180 30 0 1 0 0 empty empty attack/release -2 -8
+0 10 -257985 -1 -1 0 1;
 #X obj 253 555 *~;
 #X floatatom 516 311 5 100 1000 1 tempo tempo -;
 #X floatatom 601 336 5 0 0 1 decay - -;
@@ -66,8 +66,8 @@
 #X obj 520 128 send pulse;
 #X obj 138 37 receive pulse;
 #X obj 413 407 receive pulse;
-#X obj 610 437 hsl 128 15 0 1 0 0 empty empty intensity -2 -8 0 10
--262144 -1 -1 0 1;
+#X obj 610 437 hsl 180 30 0 1 0 0 empty empty intensity -2 -8 0 10
+-257985 -1 -1 0 1;
 #X obj 549 491 * -1;
 #X obj 549 508 + 1;
 #X obj 527 491 *~;
