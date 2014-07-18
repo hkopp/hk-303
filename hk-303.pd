@@ -1,4 +1,4 @@
-#N canvas 138 203 1436 777 10;
+#N canvas 136 229 1436 777 10;
 #X obj 138 71 mod 8;
 #X obj 477 76 tgl 15 0 empty empty on/off 17 7 0 10 -262144 -1 -1 0
 1;
@@ -8,7 +8,7 @@
 #X floatatom 172 71 5 0 0 0 - - -;
 #X floatatom 516 22 5 100 1000 0 tempo_click_here lbtempo tempo;
 #X obj 138 88 hradio 15 1 0 8 empty empty empty 0 -8 0 8 -262144 -1
--1 7;
+-1 0;
 #X obj 150 162 select 0 1 2 3 4 5 6 7;
 #X text 420 203 midi 60 = c;
 #X floatatom 41 222 5 30 90 0 - tone1 -;
@@ -40,7 +40,7 @@
 #X floatatom 216 323 5 0 0 0 - - -;
 #X floatatom 235 496 5 0 0 0 - - -;
 #X obj 368 433 vradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X obj 289 496 *~;
 #X obj 213 496 *~;
 #X floatatom 311 496 5 0 0 0 - - -;
@@ -67,7 +67,7 @@
 #X obj 138 37 receive pulse;
 #X obj 413 407 receive pulse;
 #X obj 610 437 hsl 128 15 0 1 0 0 empty empty intensity -2 -8 0 10
--262144 -1 -1 12700 1;
+-262144 -1 -1 0 1;
 #X obj 549 491 * -1;
 #X obj 549 508 + 1;
 #X obj 527 491 *~;
@@ -85,316 +85,435 @@
 #X obj 990 31 loadbang;
 #X msg 1141 99 500;
 #X obj 1141 116 send lbtempo;
-#X obj 836 360 bng 15 250 50 0 empty empty +1 17 7 0 10 -262144 -1
--1;
-#X obj 864 360 bng 15 250 50 0 empty empty -1 17 7 0 10 -262144 -1
--1;
-#N canvas 1268 408 609 396 counter 1;
-#X floatatom 110 209 5 0 0 0 - - -;
-#X obj 128 109 f;
-#X obj 86 109 + 1;
-#X obj 150 109 - 1;
-#X obj 64 109 f;
-#X obj 110 183 +;
-#X obj 128 146 t b f;
-#X obj 64 62 inlet;
-#X obj 128 62 inlet;
-#X obj 110 245 outlet;
-#X text 207 138 two bangs come in \, a number comes out. the left bang
-subtracts 1 the right bang adds 1;
-#X text 212 197 the rightmost message is for setting the initial counter
-NOTE: THIS IS NOT FOR RESETTING!!;
-#X obj 192 62 inlet;
-#X connect 0 0 9 0;
-#X connect 1 0 3 0;
-#X connect 1 0 6 0;
-#X connect 2 0 4 1;
-#X connect 3 0 1 1;
-#X connect 4 0 2 0;
-#X connect 4 0 5 0;
-#X connect 5 0 0 0;
-#X connect 6 0 5 0;
-#X connect 6 1 5 1;
-#X connect 7 0 4 0;
-#X connect 8 0 1 0;
-#X connect 12 0 1 0;
-#X restore 836 376 pd counter;
-#X obj 836 409 s tone1;
-#X floatatom 836 393 5 0 0 0 - - -;
-#X msg 893 358 60;
-#X obj 936 360 bng 15 250 50 0 empty empty +1 17 7 0 10 -262144 -1
--1;
-#X obj 964 360 bng 15 250 50 0 empty empty -1 17 7 0 10 -262144 -1
--1;
-#N canvas 603 501 609 396 counter 0;
-#X floatatom 110 209 5 0 0 0 - - -;
-#X obj 128 109 f;
-#X obj 86 109 + 1;
-#X obj 150 109 - 1;
-#X obj 64 109 f;
-#X obj 110 183 +;
-#X obj 128 146 t b f;
-#X obj 64 62 inlet;
-#X obj 128 62 inlet;
-#X obj 110 245 outlet;
-#X text 207 138 two bangs come in \, a number comes out. the left bang
-subtracts 1 the right bang adds 1;
-#X text 212 197 the rightmost message is for setting the initial counter
-NOTE: THIS IS NOT FOR RESETTING!!;
-#X obj 192 62 inlet;
-#X connect 0 0 9 0;
-#X connect 1 0 3 0;
-#X connect 1 0 6 0;
-#X connect 2 0 4 1;
-#X connect 3 0 1 1;
-#X connect 4 0 2 0;
-#X connect 4 0 5 0;
-#X connect 5 0 0 0;
-#X connect 6 0 5 0;
-#X connect 6 1 5 1;
-#X connect 7 0 4 0;
-#X connect 8 0 1 0;
-#X connect 12 0 1 0;
-#X restore 936 376 pd counter;
-#X floatatom 936 393 5 0 0 0 - - -;
-#X msg 993 358 60;
-#X obj 1036 360 bng 15 250 50 0 empty empty +1 17 7 0 10 -262144 -1
--1;
-#X obj 1064 360 bng 15 250 50 0 empty empty -1 17 7 0 10 -262144 -1
--1;
-#N canvas 603 501 609 396 counter 0;
-#X floatatom 110 209 5 0 0 0 - - -;
-#X obj 128 109 f;
-#X obj 86 109 + 1;
-#X obj 150 109 - 1;
-#X obj 64 109 f;
-#X obj 110 183 +;
-#X obj 128 146 t b f;
-#X obj 64 62 inlet;
-#X obj 128 62 inlet;
-#X obj 110 245 outlet;
-#X text 207 138 two bangs come in \, a number comes out. the left bang
-subtracts 1 the right bang adds 1;
-#X text 212 197 the rightmost message is for setting the initial counter
-NOTE: THIS IS NOT FOR RESETTING!!;
-#X obj 192 62 inlet;
-#X connect 0 0 9 0;
-#X connect 1 0 3 0;
-#X connect 1 0 6 0;
-#X connect 2 0 4 1;
-#X connect 3 0 1 1;
-#X connect 4 0 2 0;
-#X connect 4 0 5 0;
-#X connect 5 0 0 0;
-#X connect 6 0 5 0;
-#X connect 6 1 5 1;
-#X connect 7 0 4 0;
-#X connect 8 0 1 0;
-#X connect 12 0 1 0;
-#X restore 1036 376 pd counter;
-#X floatatom 1036 393 5 0 0 0 - - -;
-#X msg 1093 358 60;
-#X obj 1136 360 bng 15 250 50 0 empty empty +1 17 7 0 10 -262144 -1
--1;
-#X obj 1164 360 bng 15 250 50 0 empty empty -1 17 7 0 10 -262144 -1
--1;
-#N canvas 603 501 609 396 counter 0;
-#X floatatom 110 209 5 0 0 0 - - -;
-#X obj 128 109 f;
-#X obj 86 109 + 1;
-#X obj 150 109 - 1;
-#X obj 64 109 f;
-#X obj 110 183 +;
-#X obj 128 146 t b f;
-#X obj 64 62 inlet;
-#X obj 128 62 inlet;
-#X obj 110 245 outlet;
-#X text 207 138 two bangs come in \, a number comes out. the left bang
-subtracts 1 the right bang adds 1;
-#X text 212 197 the rightmost message is for setting the initial counter
-NOTE: THIS IS NOT FOR RESETTING!!;
-#X obj 192 62 inlet;
-#X connect 0 0 9 0;
-#X connect 1 0 3 0;
-#X connect 1 0 6 0;
-#X connect 2 0 4 1;
-#X connect 3 0 1 1;
-#X connect 4 0 2 0;
-#X connect 4 0 5 0;
-#X connect 5 0 0 0;
-#X connect 6 0 5 0;
-#X connect 6 1 5 1;
-#X connect 7 0 4 0;
-#X connect 8 0 1 0;
-#X connect 12 0 1 0;
-#X restore 1136 376 pd counter;
-#X floatatom 1136 393 5 0 0 0 - - -;
-#X msg 1193 358 60;
-#X obj 836 450 bng 15 250 50 0 empty empty +1 17 7 0 10 -262144 -1
--1;
-#X obj 864 450 bng 15 250 50 0 empty empty -1 17 7 0 10 -262144 -1
--1;
-#N canvas 603 501 609 396 counter 0;
-#X floatatom 110 209 5 0 0 0 - - -;
-#X obj 128 109 f;
-#X obj 86 109 + 1;
-#X obj 150 109 - 1;
-#X obj 64 109 f;
-#X obj 110 183 +;
-#X obj 128 146 t b f;
-#X obj 64 62 inlet;
-#X obj 128 62 inlet;
-#X obj 110 245 outlet;
-#X text 207 138 two bangs come in \, a number comes out. the left bang
-subtracts 1 the right bang adds 1;
-#X text 212 197 the rightmost message is for setting the initial counter
-NOTE: THIS IS NOT FOR RESETTING!!;
-#X obj 192 62 inlet;
-#X connect 0 0 9 0;
-#X connect 1 0 3 0;
-#X connect 1 0 6 0;
-#X connect 2 0 4 1;
-#X connect 3 0 1 1;
-#X connect 4 0 2 0;
-#X connect 4 0 5 0;
-#X connect 5 0 0 0;
-#X connect 6 0 5 0;
-#X connect 6 1 5 1;
-#X connect 7 0 4 0;
-#X connect 8 0 1 0;
-#X connect 12 0 1 0;
-#X restore 836 466 pd counter;
-#X floatatom 836 483 5 0 0 0 - - -;
-#X msg 893 448 60;
-#X obj 936 450 bng 15 250 50 0 empty empty +1 17 7 0 10 -262144 -1
--1;
-#X obj 964 450 bng 15 250 50 0 empty empty -1 17 7 0 10 -262144 -1
--1;
-#N canvas 603 501 609 396 counter 0;
-#X floatatom 110 209 5 0 0 0 - - -;
-#X obj 128 109 f;
-#X obj 86 109 + 1;
-#X obj 150 109 - 1;
-#X obj 64 109 f;
-#X obj 110 183 +;
-#X obj 128 146 t b f;
-#X obj 64 62 inlet;
-#X obj 128 62 inlet;
-#X obj 110 245 outlet;
-#X text 207 138 two bangs come in \, a number comes out. the left bang
-subtracts 1 the right bang adds 1;
-#X text 212 197 the rightmost message is for setting the initial counter
-NOTE: THIS IS NOT FOR RESETTING!!;
-#X obj 192 62 inlet;
-#X connect 0 0 9 0;
-#X connect 1 0 3 0;
-#X connect 1 0 6 0;
-#X connect 2 0 4 1;
-#X connect 3 0 1 1;
-#X connect 4 0 2 0;
-#X connect 4 0 5 0;
-#X connect 5 0 0 0;
-#X connect 6 0 5 0;
-#X connect 6 1 5 1;
-#X connect 7 0 4 0;
-#X connect 8 0 1 0;
-#X connect 12 0 1 0;
-#X restore 936 466 pd counter;
-#X floatatom 936 483 5 0 0 0 - - -;
-#X msg 993 448 60;
-#X obj 1036 450 bng 15 250 50 0 empty empty +1 17 7 0 10 -262144 -1
--1;
-#X obj 1064 450 bng 15 250 50 0 empty empty -1 17 7 0 10 -262144 -1
--1;
-#N canvas 603 501 609 396 counter 0;
-#X floatatom 110 209 5 0 0 0 - - -;
-#X obj 128 109 f;
-#X obj 86 109 + 1;
-#X obj 150 109 - 1;
-#X obj 64 109 f;
-#X obj 110 183 +;
-#X obj 128 146 t b f;
-#X obj 64 62 inlet;
-#X obj 128 62 inlet;
-#X obj 110 245 outlet;
-#X text 207 138 two bangs come in \, a number comes out. the left bang
-subtracts 1 the right bang adds 1;
-#X text 212 197 the rightmost message is for setting the initial counter
-NOTE: THIS IS NOT FOR RESETTING!!;
-#X obj 192 62 inlet;
-#X connect 0 0 9 0;
-#X connect 1 0 3 0;
-#X connect 1 0 6 0;
-#X connect 2 0 4 1;
-#X connect 3 0 1 1;
-#X connect 4 0 2 0;
-#X connect 4 0 5 0;
-#X connect 5 0 0 0;
-#X connect 6 0 5 0;
-#X connect 6 1 5 1;
-#X connect 7 0 4 0;
-#X connect 8 0 1 0;
-#X connect 12 0 1 0;
-#X restore 1036 466 pd counter;
-#X floatatom 1036 483 5 0 0 0 - - -;
-#X msg 1093 448 60;
-#X obj 1136 450 bng 15 250 50 0 empty empty +1 17 7 0 10 -262144 -1
--1;
-#X obj 1164 450 bng 15 250 50 0 empty empty -1 17 7 0 10 -262144 -1
--1;
-#N canvas 603 501 609 396 counter 0;
-#X floatatom 110 209 5 0 0 0 - - -;
-#X obj 128 109 f;
-#X obj 86 109 + 1;
-#X obj 150 109 - 1;
-#X obj 64 109 f;
-#X obj 110 183 +;
-#X obj 128 146 t b f;
-#X obj 64 62 inlet;
-#X obj 128 62 inlet;
-#X obj 110 245 outlet;
-#X text 207 138 two bangs come in \, a number comes out. the left bang
-subtracts 1 the right bang adds 1;
-#X text 212 197 the rightmost message is for setting the initial counter
-NOTE: THIS IS NOT FOR RESETTING!!;
-#X obj 192 62 inlet;
-#X connect 0 0 9 0;
-#X connect 1 0 3 0;
-#X connect 1 0 6 0;
-#X connect 2 0 4 1;
-#X connect 3 0 1 1;
-#X connect 4 0 2 0;
-#X connect 4 0 5 0;
-#X connect 5 0 0 0;
-#X connect 6 0 5 0;
-#X connect 6 1 5 1;
-#X connect 7 0 4 0;
-#X connect 8 0 1 0;
-#X connect 12 0 1 0;
-#X restore 1136 466 pd counter;
-#X floatatom 1136 483 5 0 0 0 - - -;
-#X msg 1193 448 60;
-#X obj 936 409 s tone2;
-#X obj 1036 409 s tone3;
-#X obj 1136 409 s tone4;
-#X obj 836 499 s tone5;
-#X obj 936 499 s tone6;
-#X obj 1036 499 s tone7;
-#X obj 1136 499 s tone8;
-#X obj 1193 341 r lb;
-#X obj 1093 341 r lb;
-#X obj 993 341 r lb;
-#X obj 893 341 r lb;
-#X obj 893 431 r lb;
-#X obj 993 431 r lb;
-#X obj 1093 431 r lb;
-#X obj 1193 431 r lb;
 #X obj 990 58 send lb;
 #X obj 1141 82 r lb;
 #X obj 516 327 t b f;
 #X obj 483 257 r lb;
 #X obj 335 431 r lb;
 #X obj 577 435 r lb;
+#N canvas 356 261 842 635 seqcontrol 0;
+#X obj 64 65 cnv 15 100 60 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X obj 363 147 bng 15 250 50 0 empty tone1+ +1 17 7 0 10 -262144 -1
+-1;
+#X obj 391 147 bng 15 250 50 0 empty tone1- -1 17 7 0 10 -262144 -1
+-1;
+#N canvas 1268 408 609 396 counter 0;
+#X floatatom 110 209 5 0 0 0 - - -;
+#X obj 128 109 f;
+#X obj 86 109 + 1;
+#X obj 150 109 - 1;
+#X obj 64 109 f;
+#X obj 110 183 +;
+#X obj 128 146 t b f;
+#X obj 64 62 inlet;
+#X obj 128 62 inlet;
+#X obj 110 245 outlet;
+#X text 207 138 two bangs come in \, a number comes out. the left bang
+subtracts 1 the right bang adds 1;
+#X text 212 197 the rightmost message is for setting the initial counter
+NOTE: THIS IS NOT FOR RESETTING!!;
+#X obj 192 62 inlet;
+#X connect 0 0 9 0;
+#X connect 1 0 3 0;
+#X connect 1 0 6 0;
+#X connect 2 0 4 1;
+#X connect 3 0 1 1;
+#X connect 4 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 7 0 4 0;
+#X connect 8 0 1 0;
+#X connect 12 0 1 0;
+#X restore 363 163 pd counter;
+#X obj 363 196 s tone1;
+#X floatatom 363 180 5 0 0 0 - - -;
+#X msg 420 145 60;
+#X obj 463 147 bng 15 250 50 0 empty tone2+ +1 17 7 0 10 -262144 -1
+-1;
+#X obj 491 147 bng 15 250 50 0 empty tone2- -1 17 7 0 10 -262144 -1
+-1;
+#N canvas 603 501 609 396 counter 0;
+#X floatatom 110 209 5 0 0 0 - - -;
+#X obj 128 109 f;
+#X obj 86 109 + 1;
+#X obj 150 109 - 1;
+#X obj 64 109 f;
+#X obj 110 183 +;
+#X obj 128 146 t b f;
+#X obj 64 62 inlet;
+#X obj 128 62 inlet;
+#X obj 110 245 outlet;
+#X text 207 138 two bangs come in \, a number comes out. the left bang
+subtracts 1 the right bang adds 1;
+#X text 212 197 the rightmost message is for setting the initial counter
+NOTE: THIS IS NOT FOR RESETTING!!;
+#X obj 192 62 inlet;
+#X connect 0 0 9 0;
+#X connect 1 0 3 0;
+#X connect 1 0 6 0;
+#X connect 2 0 4 1;
+#X connect 3 0 1 1;
+#X connect 4 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 7 0 4 0;
+#X connect 8 0 1 0;
+#X connect 12 0 1 0;
+#X restore 463 163 pd counter;
+#X floatatom 463 180 5 0 0 0 - - -;
+#X msg 520 145 60;
+#X obj 563 147 bng 15 250 50 0 empty tone3+ +1 17 7 0 10 -262144 -1
+-1;
+#X obj 591 147 bng 15 250 50 0 empty tone3- -1 17 7 0 10 -262144 -1
+-1;
+#N canvas 601 527 609 396 counter 0;
+#X floatatom 110 209 5 0 0 0 - - -;
+#X obj 128 109 f;
+#X obj 86 109 + 1;
+#X obj 150 109 - 1;
+#X obj 64 109 f;
+#X obj 110 183 +;
+#X obj 128 146 t b f;
+#X obj 64 62 inlet;
+#X obj 128 62 inlet;
+#X obj 110 245 outlet;
+#X text 207 138 two bangs come in \, a number comes out. the left bang
+subtracts 1 the right bang adds 1;
+#X text 212 197 the rightmost message is for setting the initial counter
+NOTE: THIS IS NOT FOR RESETTING!!;
+#X obj 192 62 inlet;
+#X connect 0 0 9 0;
+#X connect 1 0 3 0;
+#X connect 1 0 6 0;
+#X connect 2 0 4 1;
+#X connect 3 0 1 1;
+#X connect 4 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 7 0 4 0;
+#X connect 8 0 1 0;
+#X connect 12 0 1 0;
+#X restore 563 163 pd counter;
+#X floatatom 563 180 5 0 0 0 - - -;
+#X msg 620 145 60;
+#X obj 663 147 bng 15 250 50 0 empty tone4+ +1 17 7 0 10 -262144 -1
+-1;
+#X obj 691 147 bng 15 250 50 0 empty tone4- -1 17 7 0 10 -262144 -1
+-1;
+#N canvas 603 501 609 396 counter 0;
+#X floatatom 110 209 5 0 0 0 - - -;
+#X obj 128 109 f;
+#X obj 86 109 + 1;
+#X obj 150 109 - 1;
+#X obj 64 109 f;
+#X obj 110 183 +;
+#X obj 128 146 t b f;
+#X obj 64 62 inlet;
+#X obj 128 62 inlet;
+#X obj 110 245 outlet;
+#X text 207 138 two bangs come in \, a number comes out. the left bang
+subtracts 1 the right bang adds 1;
+#X text 212 197 the rightmost message is for setting the initial counter
+NOTE: THIS IS NOT FOR RESETTING!!;
+#X obj 192 62 inlet;
+#X connect 0 0 9 0;
+#X connect 1 0 3 0;
+#X connect 1 0 6 0;
+#X connect 2 0 4 1;
+#X connect 3 0 1 1;
+#X connect 4 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 7 0 4 0;
+#X connect 8 0 1 0;
+#X connect 12 0 1 0;
+#X restore 663 163 pd counter;
+#X floatatom 663 180 5 0 0 0 - - -;
+#X msg 720 145 60;
+#X obj 363 277 bng 15 250 50 0 empty tone5+ +1 17 7 0 10 -262144 -1
+-1;
+#X obj 391 277 bng 15 250 50 0 empty tone5- -1 17 7 0 10 -262144 -1
+-1;
+#N canvas 603 501 609 396 counter 0;
+#X floatatom 110 209 5 0 0 0 - - -;
+#X obj 128 109 f;
+#X obj 86 109 + 1;
+#X obj 150 109 - 1;
+#X obj 64 109 f;
+#X obj 110 183 +;
+#X obj 128 146 t b f;
+#X obj 64 62 inlet;
+#X obj 128 62 inlet;
+#X obj 110 245 outlet;
+#X text 207 138 two bangs come in \, a number comes out. the left bang
+subtracts 1 the right bang adds 1;
+#X text 212 197 the rightmost message is for setting the initial counter
+NOTE: THIS IS NOT FOR RESETTING!!;
+#X obj 192 62 inlet;
+#X connect 0 0 9 0;
+#X connect 1 0 3 0;
+#X connect 1 0 6 0;
+#X connect 2 0 4 1;
+#X connect 3 0 1 1;
+#X connect 4 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 7 0 4 0;
+#X connect 8 0 1 0;
+#X connect 12 0 1 0;
+#X restore 363 293 pd counter;
+#X floatatom 363 310 5 0 0 0 - - -;
+#X msg 420 275 60;
+#X obj 463 277 bng 15 250 50 0 empty tone6+ +1 17 7 0 10 -262144 -1
+-1;
+#X obj 491 277 bng 15 250 50 0 empty tone6- -1 17 7 0 10 -262144 -1
+-1;
+#N canvas 603 501 609 396 counter 0;
+#X floatatom 110 209 5 0 0 0 - - -;
+#X obj 128 109 f;
+#X obj 86 109 + 1;
+#X obj 150 109 - 1;
+#X obj 64 109 f;
+#X obj 110 183 +;
+#X obj 128 146 t b f;
+#X obj 64 62 inlet;
+#X obj 128 62 inlet;
+#X obj 110 245 outlet;
+#X text 207 138 two bangs come in \, a number comes out. the left bang
+subtracts 1 the right bang adds 1;
+#X text 212 197 the rightmost message is for setting the initial counter
+NOTE: THIS IS NOT FOR RESETTING!!;
+#X obj 192 62 inlet;
+#X connect 0 0 9 0;
+#X connect 1 0 3 0;
+#X connect 1 0 6 0;
+#X connect 2 0 4 1;
+#X connect 3 0 1 1;
+#X connect 4 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 7 0 4 0;
+#X connect 8 0 1 0;
+#X connect 12 0 1 0;
+#X restore 463 293 pd counter;
+#X floatatom 463 310 5 0 0 0 - - -;
+#X msg 520 275 60;
+#X obj 563 277 bng 15 250 50 0 empty tone7+ +1 17 7 0 10 -262144 -1
+-1;
+#X obj 591 277 bng 15 250 50 0 empty tone7- -1 17 7 0 10 -262144 -1
+-1;
+#N canvas 603 501 609 396 counter 0;
+#X floatatom 110 209 5 0 0 0 - - -;
+#X obj 128 109 f;
+#X obj 86 109 + 1;
+#X obj 150 109 - 1;
+#X obj 64 109 f;
+#X obj 110 183 +;
+#X obj 128 146 t b f;
+#X obj 64 62 inlet;
+#X obj 128 62 inlet;
+#X obj 110 245 outlet;
+#X text 207 138 two bangs come in \, a number comes out. the left bang
+subtracts 1 the right bang adds 1;
+#X text 212 197 the rightmost message is for setting the initial counter
+NOTE: THIS IS NOT FOR RESETTING!!;
+#X obj 192 62 inlet;
+#X connect 0 0 9 0;
+#X connect 1 0 3 0;
+#X connect 1 0 6 0;
+#X connect 2 0 4 1;
+#X connect 3 0 1 1;
+#X connect 4 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 7 0 4 0;
+#X connect 8 0 1 0;
+#X connect 12 0 1 0;
+#X restore 563 293 pd counter;
+#X floatatom 563 310 5 0 0 0 - - -;
+#X msg 620 275 60;
+#X obj 663 277 bng 15 250 50 0 empty tone8+ +1 17 7 0 10 -262144 -1
+-1;
+#X obj 691 277 bng 15 250 50 0 empty tone8- -1 17 7 0 10 -262144 -1
+-1;
+#N canvas 603 501 609 396 counter 0;
+#X floatatom 110 209 5 0 0 0 - - -;
+#X obj 128 109 f;
+#X obj 86 109 + 1;
+#X obj 150 109 - 1;
+#X obj 64 109 f;
+#X obj 110 183 +;
+#X obj 128 146 t b f;
+#X obj 64 62 inlet;
+#X obj 128 62 inlet;
+#X obj 110 245 outlet;
+#X text 207 138 two bangs come in \, a number comes out. the left bang
+subtracts 1 the right bang adds 1;
+#X text 212 197 the rightmost message is for setting the initial counter
+NOTE: THIS IS NOT FOR RESETTING!!;
+#X obj 192 62 inlet;
+#X connect 0 0 9 0;
+#X connect 1 0 3 0;
+#X connect 1 0 6 0;
+#X connect 2 0 4 1;
+#X connect 3 0 1 1;
+#X connect 4 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 0;
+#X connect 6 1 5 1;
+#X connect 7 0 4 0;
+#X connect 8 0 1 0;
+#X connect 12 0 1 0;
+#X restore 663 293 pd counter;
+#X floatatom 663 310 5 0 0 0 - - -;
+#X msg 720 275 60;
+#X obj 463 196 s tone2;
+#X obj 563 196 s tone3;
+#X obj 663 196 s tone4;
+#X obj 363 326 s tone5;
+#X obj 463 326 s tone6;
+#X obj 563 326 s tone7;
+#X obj 663 326 s tone8;
+#X obj 720 128 r lb;
+#X obj 620 128 r lb;
+#X obj 520 128 r lb;
+#X obj 420 128 r lb;
+#X obj 420 258 r lb;
+#X obj 520 258 r lb;
+#X obj 620 258 r lb;
+#X obj 720 258 r lb;
+#X obj 111 111 bng 30 250 50 0 empty empty empty 17 7 0 15 -260097
+-1 -1;
+#X obj 20 124 send tone1+;
+#X obj 111 398 bng 30 250 50 0 empty empty empty 17 7 0 20 -260097
+-1 -1;
+#X obj 152 398 bng 30 250 50 0 empty empty empty 17 7 0 20 -260097
+-1 -1;
+#X obj 111 357 bng 30 250 50 0 empty empty empty 17 7 0 20 -260097
+-1 -1;
+#X obj 152 152 bng 30 250 50 0 empty empty empty 17 7 0 20 -260097
+-1 -1;
+#X obj 111 316 bng 30 250 50 0 empty empty empty 17 7 0 20 -260097
+-1 -1;
+#X obj 152 357 bng 30 250 50 0 empty empty empty 17 7 0 20 -260097
+-1 -1;
+#X obj 152 316 bng 30 250 50 0 empty empty empty 17 7 0 20 -260097
+-1 -1;
+#X obj 111 275 bng 30 250 50 0 empty empty empty 17 7 0 20 -260097
+-1 -1;
+#X obj 152 275 bng 30 250 50 0 empty empty empty 17 7 0 20 -260097
+-1 -1;
+#X obj 152 193 bng 30 250 50 0 empty empty empty 17 7 0 20 -260097
+-1 -1;
+#X obj 152 234 bng 30 250 50 0 empty empty empty 17 7 0 20 -260097
+-1 -1;
+#X obj 111 234 bng 30 250 50 0 empty empty empty 17 7 0 20 -260097
+-1 -1;
+#X obj 111 193 bng 30 250 50 0 empty empty empty 17 7 0 20 -260097
+-1 -1;
+#X obj 111 152 bng 30 250 50 0 empty empty empty 17 7 0 20 -260097
+-1 -1;
+#X obj 153 111 bng 30 250 50 0 empty empty empty 17 7 0 20 -260097
+-1 -1;
+#X text 223 497 left side increments tone right side derements tone
+;
+#X obj 204 124 send tone1-;
+#X obj 203 165 send tone2-;
+#X obj 203 206 send tone3-;
+#X obj 203 247 send tone4-;
+#X obj 203 288 send tone5-;
+#X obj 203 329 send tone6-;
+#X obj 203 370 send tone7-;
+#X obj 203 411 send tone8-;
+#X obj 20 165 send tone2+;
+#X obj 20 206 send tone3+;
+#X obj 20 247 send tone4+;
+#X obj 20 288 send tone5+;
+#X obj 20 329 send tone6+;
+#X obj 20 370 send tone7+;
+#X obj 20 411 send tone8+;
+#X connect 1 0 3 0;
+#X connect 2 0 3 1;
+#X connect 3 0 5 0;
+#X connect 5 0 4 0;
+#X connect 6 0 3 2;
+#X connect 7 0 9 0;
+#X connect 8 0 9 1;
+#X connect 9 0 10 0;
+#X connect 10 0 42 0;
+#X connect 11 0 9 2;
+#X connect 12 0 14 0;
+#X connect 13 0 14 1;
+#X connect 14 0 15 0;
+#X connect 15 0 43 0;
+#X connect 16 0 14 2;
+#X connect 17 0 19 0;
+#X connect 18 0 19 1;
+#X connect 19 0 20 0;
+#X connect 20 0 44 0;
+#X connect 21 0 19 2;
+#X connect 22 0 24 0;
+#X connect 23 0 24 1;
+#X connect 24 0 25 0;
+#X connect 25 0 45 0;
+#X connect 26 0 24 2;
+#X connect 27 0 29 0;
+#X connect 28 0 29 1;
+#X connect 29 0 30 0;
+#X connect 30 0 46 0;
+#X connect 31 0 29 2;
+#X connect 32 0 34 0;
+#X connect 33 0 34 1;
+#X connect 34 0 35 0;
+#X connect 35 0 47 0;
+#X connect 36 0 34 2;
+#X connect 37 0 39 0;
+#X connect 38 0 39 1;
+#X connect 39 0 40 0;
+#X connect 40 0 48 0;
+#X connect 41 0 39 2;
+#X connect 49 0 21 0;
+#X connect 50 0 16 0;
+#X connect 51 0 11 0;
+#X connect 52 0 6 0;
+#X connect 53 0 26 0;
+#X connect 54 0 31 0;
+#X connect 55 0 36 0;
+#X connect 56 0 41 0;
+#X connect 57 0 58 0;
+#X connect 59 0 89 0;
+#X connect 60 0 82 0;
+#X connect 61 0 88 0;
+#X connect 62 0 76 0;
+#X connect 63 0 87 0;
+#X connect 64 0 81 0;
+#X connect 65 0 80 0;
+#X connect 66 0 86 0;
+#X connect 67 0 79 0;
+#X connect 68 0 77 0;
+#X connect 69 0 78 0;
+#X connect 70 0 85 0;
+#X connect 71 0 84 0;
+#X connect 72 0 83 0;
+#X connect 73 0 75 0;
+#X coords 0 -1 1 1 95 340 1 100 100;
+#X restore 872 189 pd seqcontrol;
 #X connect 0 0 7 0;
 #X connect 0 0 35 0;
 #X connect 1 0 3 0;
@@ -450,7 +569,7 @@ NOTE: THIS IS NOT FOR RESETTING!!;
 #X connect 47 0 51 0;
 #X connect 47 0 52 0;
 #X connect 48 0 75 0;
-#X connect 49 0 139 0;
+#X connect 49 0 83 0;
 #X connect 50 0 56 0;
 #X connect 51 0 55 0;
 #X connect 52 0 53 0;
@@ -481,61 +600,13 @@ NOTE: THIS IS NOT FOR RESETTING!!;
 #X connect 76 0 77 0;
 #X connect 77 0 74 1;
 #X connect 77 0 75 1;
-#X connect 78 0 137 0;
+#X connect 78 0 81 0;
 #X connect 79 0 80 0;
-#X connect 81 0 83 0;
-#X connect 82 0 83 1;
-#X connect 83 0 85 0;
-#X connect 85 0 84 0;
-#X connect 86 0 83 2;
-#X connect 87 0 89 0;
-#X connect 88 0 89 1;
-#X connect 89 0 90 0;
-#X connect 90 0 122 0;
-#X connect 91 0 89 2;
-#X connect 92 0 94 0;
-#X connect 93 0 94 1;
-#X connect 94 0 95 0;
-#X connect 95 0 123 0;
-#X connect 96 0 94 2;
-#X connect 97 0 99 0;
-#X connect 98 0 99 1;
-#X connect 99 0 100 0;
-#X connect 100 0 124 0;
-#X connect 101 0 99 2;
-#X connect 102 0 104 0;
-#X connect 103 0 104 1;
-#X connect 104 0 105 0;
-#X connect 105 0 125 0;
-#X connect 106 0 104 2;
-#X connect 107 0 109 0;
-#X connect 108 0 109 1;
-#X connect 109 0 110 0;
-#X connect 110 0 126 0;
-#X connect 111 0 109 2;
-#X connect 112 0 114 0;
-#X connect 113 0 114 1;
-#X connect 114 0 115 0;
-#X connect 115 0 127 0;
-#X connect 116 0 114 2;
-#X connect 117 0 119 0;
-#X connect 118 0 119 1;
-#X connect 119 0 120 0;
-#X connect 120 0 128 0;
-#X connect 121 0 119 2;
-#X connect 129 0 101 0;
-#X connect 130 0 96 0;
-#X connect 131 0 91 0;
-#X connect 132 0 86 0;
-#X connect 133 0 106 0;
-#X connect 134 0 111 0;
-#X connect 135 0 116 0;
-#X connect 136 0 121 0;
-#X connect 138 0 79 0;
-#X connect 139 0 56 0;
-#X connect 139 0 55 0;
-#X connect 139 1 56 1;
-#X connect 139 1 55 1;
-#X connect 140 0 47 0;
-#X connect 141 0 38 0;
-#X connect 142 0 63 0;
+#X connect 82 0 79 0;
+#X connect 83 0 56 0;
+#X connect 83 0 55 0;
+#X connect 83 1 56 1;
+#X connect 83 1 55 1;
+#X connect 84 0 47 0;
+#X connect 85 0 38 0;
+#X connect 86 0 63 0;
