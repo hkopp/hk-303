@@ -26,7 +26,7 @@
 #X obj 486 361 ar-envelope;
 #X obj 413 337 receive pulse;
 #X obj 610 367 hsl 180 30 0 1 0 1 empty empty intensity -2 -8 0 10
--257985 -1 -1 0 1;
+-257985 -1 -1 17900 1;
 #X obj 549 421 * -1;
 #X obj 549 438 + 1;
 #X obj 527 421 *~;
@@ -43,7 +43,7 @@
 #X obj 990 31 loadbang;
 #X obj 990 58 send lb;
 #X obj 516 257 t b f;
-#N canvas 374 360 842 635 seqcontrol 0;
+#N canvas 2 156 1436 723 seqcontrol 0;
 #X obj 363 147 bng 15 250 50 0 empty tone1+ +1 17 7 0 10 -262144 -1
 -1;
 #X obj 391 147 bng 15 250 50 0 empty tone1- -1 17 7 0 10 -262144 -1
@@ -464,13 +464,13 @@ NOTE: THIS IS NOT FOR RESETTING!!;
 #X connect 72 0 57 0;
 #X coords 0 -1 1 1 95 340 1 100 100;
 #X restore 82 189 pd seqcontrol;
-#N canvas 525 389 1020 631 sequencer 0;
+#N canvas 2 156 1436 723 sequencer 0;
 #X obj 170 73 mod 8;
 #X obj 170 56 f;
 #X obj 192 56 + 1;
 #X floatatom 204 73 5 0 0 0 - - -;
 #X obj 170 110 hradio 32 1 0 8 empty empty empty 0 -8 0 8 -204800 -1
--1 4;
+-1 6;
 #X obj 182 314 select 0 1 2 3 4 5 6 7;
 #X floatatom 73 372 5 30 90 0 - tone1 -;
 #X obj 73 388 mtof;
@@ -552,7 +552,7 @@ NOTE: THIS IS NOT FOR RESETTING!!;
 #X connect 33 0 1 0;
 #X coords 0 -1 1 1 296 100 1 150 90;
 #X restore 82 89 pd sequencer;
-#X obj 251 585 multidelay;
+#X obj 301 585 multidelay;
 #N canvas 127 377 699 411 control 0;
 #X obj 117 114 tgl 30 0 empty empty on/off 17 7 0 10 -258113 -1 -1
 1 1;
@@ -609,7 +609,7 @@ NOTE: THIS IS NOT FOR RESETTING!!;
 #X connect 32 0 29 0;
 #X connect 33 0 10 0;
 #X connect 33 0 9 0;
-#X connect 34 0 43 0;
+#X connect 34 0 32 0;
 #X connect 35 0 34 0;
 #X connect 36 0 37 0;
 #X connect 37 0 34 1;
@@ -619,4 +619,3 @@ NOTE: THIS IS NOT FOR RESETTING!!;
 #X connect 40 0 18 0;
 #X connect 40 1 19 1;
 #X connect 40 1 18 1;
-#X connect 43 0 32 0;
