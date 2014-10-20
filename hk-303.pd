@@ -1,27 +1,27 @@
 #N canvas 2 101 1916 958 10;
 #X obj 1091 684 dac~;
-#X floatatom 725 356 5 0 0 0 - - -;
-#X obj 858 293 vradio 30 1 1 2 empty empty empty 0 -8 0 10 -191407
+#X floatatom 705 166 5 0 0 0 - - -;
+#X obj 838 103 vradio 30 1 1 2 empty empty empty 0 -8 0 10 -191407
 -1 -1 0;
-#X obj 779 356 *~;
-#X obj 703 356 *~;
-#X floatatom 801 356 5 0 0 0 - - -;
-#X obj 794 339 == 1;
-#X obj 718 339 == 0;
-#X obj 780 312 square;
-#X obj 704 312 saw;
+#X obj 759 166 *~;
+#X obj 683 166 *~;
+#X floatatom 781 166 5 0 0 0 - - -;
+#X obj 774 149 == 1;
+#X obj 698 149 == 0;
+#X obj 760 122 square;
+#X obj 684 122 saw;
 #X obj 1094 569 *~;
 #X obj 1096 616 hip~ 5;
 #X obj 1096 633 hip~ 5;
 #X obj 1096 650 hip~ 5;
 #X obj 1096 599 hip~ 5;
-#X obj 704 287 receive frequency;
+#X obj 684 97 receive frequency;
 #X obj 990 31 loadbang;
 #X obj 990 58 send lb;
 #X obj 801 615 multidelay;
 #N canvas 2 119 1916 940 control 0;
 #X obj 117 114 tgl 30 0 empty empty on/off 17 7 0 10 -258113 -1 -1
-1 1;
+0 1;
 #X obj 121 311 metro 500;
 #X floatatom 166 129 5 50 2000 1 bpm - -;
 #X obj 121 328 send pulse;
@@ -37,30 +37,7 @@
 #X connect 7 0 6 0;
 #X connect 7 0 1 1;
 #X coords 0 -1 1 1 120 60 1 100 100;
-#X restore 699 81 pd control;
-#X obj 1105 466 pack f f f f f;
-#X obj 1110 256 vsl 20 128 -1 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 12400 1;
-#X floatatom 1113 401 5 0 0 0 - - -;
-#X obj 1150 256 vsl 20 128 -1 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 2200 1;
-#X floatatom 1153 401 5 0 0 0 - - -;
-#X obj 1190 256 vsl 20 128 -1 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 9100 1;
-#X floatatom 1193 401 5 0 0 0 - - -;
-#X obj 1230 256 vsl 20 128 -1 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 900 1;
-#X floatatom 1233 401 5 0 0 0 - - -;
-#X obj 1270 256 vsl 20 128 -1 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 6100 1;
-#X floatatom 1273 401 5 0 0 0 - - -;
-#X obj 1089 442 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X text 1140 233 parameter for filter;
-#X obj 985 500 biquad~;
-#X obj 984 544 min~ 1;
-#X obj 984 562 max~ -1;
-#X obj 984 526 *~ 0.7;
+#X restore 699 421 pd control;
 #N canvas 2 119 1916 940 freq 0;
 #X obj 116 506 mtof;
 #X obj 101 523 f;
@@ -255,7 +232,7 @@ numbers from 0 up to length-1 in the global variable counter;
 #X connect 6 0 8 0;
 #X connect 7 0 0 1;
 #X coords 0 -1 1 1 85 60 1 300 100;
-#X restore 707 163 pd seq;
+#X restore 707 503 pd seq;
 #N canvas 2 119 1916 940 runlight 0;
 #X obj 122 110 hradio 32 1 0 16 empty empty empty 0 -8 0 8 -204800
 -1 -1 0;
@@ -401,8 +378,8 @@ numbers from 0 up to length-1 in the global variable counter;
 #X connect 50 0 36 0;
 #X coords 0 -1 1 1 560 250 1 150 90;
 #X restore 78 30 pd loudness;
-#X obj 940 398 receive loudness;
-#X obj 905 443 *~;
+#X obj 909 208 receive loudness;
+#X obj 885 253 *~;
 #N canvas 2 119 1916 940 envelope 0;
 #X obj 130 124 hsl 180 30 0 1 0 1 empty empty attack/release -2 -8
 0 10 -257985 -1 -1 3000 1;
@@ -453,11 +430,12 @@ numbers from 0 up to length-1 in the global variable counter;
 #X connect 20 0 3 0;
 #X connect 20 0 4 0;
 #X coords 0 -1 1 1 240 120 1 100 100;
-#X restore 1475 361 pd envelope;
+#X restore 1175 361 pd envelope;
+#X obj 898 301 filter;
 #X connect 2 0 6 0;
 #X connect 2 0 7 0;
-#X connect 3 0 42 0;
-#X connect 4 0 42 0;
+#X connect 3 0 25 0;
+#X connect 4 0 25 0;
 #X connect 6 0 5 0;
 #X connect 6 0 3 1;
 #X connect 7 0 1 0;
@@ -473,26 +451,7 @@ numbers from 0 up to length-1 in the global variable counter;
 #X connect 15 0 9 0;
 #X connect 15 0 8 0;
 #X connect 16 0 17 0;
-#X connect 20 0 33 0;
-#X connect 21 0 22 0;
-#X connect 22 0 20 0;
-#X connect 23 0 24 0;
-#X connect 24 0 20 1;
-#X connect 24 0 31 0;
-#X connect 25 0 26 0;
-#X connect 26 0 20 2;
-#X connect 26 0 31 0;
-#X connect 27 0 28 0;
-#X connect 28 0 20 3;
-#X connect 28 0 31 0;
-#X connect 29 0 30 0;
-#X connect 30 0 20 4;
-#X connect 30 0 31 0;
-#X connect 31 0 20 0;
-#X connect 33 0 36 0;
-#X connect 34 0 35 0;
-#X connect 35 0 10 0;
-#X connect 36 0 34 0;
-#X connect 41 0 42 1;
-#X connect 42 0 33 0;
-#X connect 43 0 10 1;
+#X connect 24 0 25 1;
+#X connect 25 0 27 0;
+#X connect 26 0 10 1;
+#X connect 27 0 10 0;
