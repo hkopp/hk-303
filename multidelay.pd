@@ -1,17 +1,17 @@
-#N canvas 2 174 1436 705 10;
+#N canvas 1 194 1436 705 10;
 #X floatatom 508 192 10 0 0 0 - delay0 -;
 #X floatatom 648 192 10 0 0 0 - delay1 -;
 #X floatatom 787 192 10 0 0 0 - delay2 -;
-#X obj 115 114 vsl 30 120 1 1000 1 1 delay0 empty empty 0 -9 0 10 -4032
--1 -1 10500 1;
+#X obj 115 114 vsl 30 120 50 1000 1 1 delay0 empty empty 0 -9 0 10
+-4032 -1 -1 10500 1;
 #X obj 145 114 vsl 40 120 0 1 0 1 delayint0 empty empty 0 -9 0 10 -204800
--1 -1 11900 1;
-#X obj 185 114 vsl 30 120 1 1000 1 1 delay1 empty empty 0 -9 0 10 -4032
--1 -1 11900 1;
+-1 -1 11600 1;
+#X obj 185 114 vsl 30 120 50 1000 1 1 delay1 empty empty 0 -9 0 10
+-4032 -1 -1 11900 1;
 #X obj 215 114 vsl 40 120 0 1 0 1 delayint1 empty empty 0 -9 0 10 -204800
 -1 -1 0 1;
-#X obj 255 114 vsl 30 120 1 1000 1 1 delay2 empty empty 0 -9 0 10 -4032
--1 -1 11900 1;
+#X obj 255 114 vsl 30 120 50 1000 1 1 delay2 empty empty 0 -9 0 10
+-4032 -1 -1 11900 1;
 #X obj 285 114 vsl 40 120 0 1 0 1 delayint2 empty empty 0 -9 0 10 -204800
 -1 -1 0 1;
 #X floatatom 522 241 5 0 0 0 - delayint0 -;
@@ -26,12 +26,6 @@
 #X obj 648 208 delread~ delay1 0;
 #X obj 787 208 delread~ delay2 0;
 #X obj 443 387 /~ 4;
-#X obj 790 462 delwrite~ dl;
-#X obj 799 515 delread~ dl 500;
-#X obj 785 385 osc~ 400;
-#X msg 845 321 200;
-#X msg 791 317 400;
-#X obj 648 535 dac~;
 #X obj 508 158 delwrite~ delay0 1200;
 #X obj 648 158 delwrite~ delay1 1200;
 #X obj 788 158 delwrite~ delay2 1200;
@@ -45,14 +39,11 @@
 #X connect 13 0 20 0;
 #X connect 14 0 20 0;
 #X connect 16 0 20 0;
-#X connect 16 0 27 0;
-#X connect 16 0 28 0;
-#X connect 16 0 29 0;
+#X connect 16 0 21 0;
+#X connect 16 0 22 0;
+#X connect 16 0 23 0;
 #X connect 17 0 12 0;
 #X connect 18 0 13 0;
 #X connect 19 0 14 0;
 #X connect 20 0 15 0;
-#X connect 23 0 21 0;
-#X connect 24 0 23 0;
-#X connect 25 0 23 0;
 #X coords 0 -1 1 1 240 150 1 100 100;
