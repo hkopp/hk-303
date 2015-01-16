@@ -1,23 +1,23 @@
-#N canvas 2 119 1916 940 10;
-#X obj 103 349 pack f f f f f;
-#X obj 108 139 vsl 20 128 -1 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 12400 1;
-#X floatatom 111 284 5 0 0 0 - - -;
-#X obj 148 139 vsl 20 128 -1 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 2200 1;
-#X floatatom 151 284 5 0 0 0 - - -;
-#X obj 188 139 vsl 20 128 -1 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 9100 1;
-#X floatatom 191 284 5 0 0 0 - - -;
-#X obj 228 139 vsl 20 128 -1 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 900 1;
-#X floatatom 231 284 5 0 0 0 - - -;
-#X obj 268 139 vsl 20 128 -1 1 0 1 empty empty empty 0 -9 0 10 -262144
--1 -1 6100 1;
-#X floatatom 271 284 5 0 0 0 - - -;
-#X obj 87 325 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#N canvas 0 100 1920 980 10;
+#X obj 112 349 pack f f f f f;
+#X obj 120 139 vsl 20 128 -1 1 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 500 1;
+#X floatatom 120 284 5 0 0 0 - - -;
+#X obj 160 139 vsl 20 128 -1 1 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 1300 1;
+#X floatatom 160 284 5 0 0 0 - - -;
+#X obj 200 139 vsl 20 128 -1 1 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 7600 1;
+#X floatatom 200 284 5 0 0 0 - - -;
+#X obj 240 139 vsl 20 128 -1 1 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 1400 1;
+#X floatatom 240 284 5 0 0 0 - - -;
+#X obj 280 139 vsl 20 128 -1 1 0 1 empty empty empty 0 -9 0 10 -262144
+-1 -1 1300 1;
+#X floatatom 280 284 5 0 0 0 - - -;
+#X obj 96 325 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X text 138 116 parameter for filter;
+#X text 150 116 parameter for filter;
 #X obj -17 383 biquad~;
 #X obj -18 427 min~ 1;
 #X obj -18 445 max~ -1;
@@ -45,4 +45,4 @@
 #X connect 15 0 18 0;
 #X connect 16 0 14 0;
 #X connect 17 0 13 0;
-#X coords 0 -1 1 1 210 210 1 100 100;
+#X coords 0 -1 1 1 220 210 1 100 100;

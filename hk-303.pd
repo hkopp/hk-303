@@ -1,4 +1,4 @@
-#N canvas 2 101 1916 958 10;
+#N canvas 265 184 1544 860 10;
 #X obj 1091 684 dac~;
 #X floatatom 705 166 5 0 0 0 - - -;
 #X obj 838 103 vradio 30 1 1 2 empty empty empty 0 -8 0 10 -191407
@@ -18,10 +18,10 @@
 #X obj 684 97 receive frequency;
 #X obj 990 31 loadbang;
 #X obj 990 58 send lb;
-#X obj 801 615 multidelay;
-#N canvas 2 119 1916 940 control 0;
+#X obj 802 615 multidelay;
+#N canvas 0 100 1920 980 control 0;
 #X obj 117 114 tgl 30 0 empty empty on/off 17 7 0 10 -258113 -1 -1
-0 1;
+1 1;
 #X obj 121 311 metro 500;
 #X floatatom 166 129 5 50 2000 1 bpm - -;
 #X obj 121 328 send pulse;
@@ -38,7 +38,7 @@
 #X connect 7 0 1 1;
 #X coords 0 -1 1 1 120 60 1 100 100;
 #X restore 699 421 pd control;
-#N canvas 2 119 1916 940 freq 0;
+#N canvas 40 215 908 844 freq 0;
 #X obj 116 506 mtof;
 #X obj 101 523 f;
 #X obj 304 506 mtof;
@@ -79,49 +79,49 @@
 #X obj 845 506 mtof;
 #X obj 830 523 f;
 #X obj 205 126 vsl 32 180 30 60 0 1 empty empty empty 0 -9 0 10 -261234
--1 -1 7900 1;
+-1 -1 3100 1;
 #X floatatom 205 370 5 0 0 0 - - -;
 #X obj 237 126 vsl 32 180 30 60 0 1 empty empty empty 0 -9 0 10 -261234
--1 -1 10000 1;
+-1 -1 0 1;
 #X floatatom 237 370 5 0 0 0 - - -;
 #X obj 269 126 vsl 32 180 30 60 0 1 empty empty empty 0 -9 0 10 -261234
--1 -1 8000 1;
+-1 -1 0 1;
 #X floatatom 269 370 5 0 0 0 - - -;
 #X obj 301 126 vsl 32 180 30 60 0 1 empty empty empty 0 -9 0 10 -261234
--1 -1 12400 1;
+-1 -1 0 1;
 #X floatatom 301 370 5 0 0 0 - - -;
 #X obj 333 126 vsl 32 180 30 60 0 1 empty empty empty 0 -9 0 10 -261234
--1 -1 7500 1;
+-1 -1 4600 1;
 #X floatatom 333 370 5 0 0 0 - - -;
 #X obj 365 126 vsl 32 180 30 60 0 1 empty empty empty 0 -9 0 10 -261234
--1 -1 10200 1;
+-1 -1 0 1;
 #X floatatom 365 370 5 0 0 0 - - -;
 #X obj 397 126 vsl 32 180 30 60 0 1 empty empty empty 0 -9 0 10 -261234
--1 -1 9700 1;
+-1 -1 0 1;
 #X floatatom 397 370 5 0 0 0 - - -;
 #X obj 429 126 vsl 32 180 30 60 0 1 empty empty empty 0 -9 0 10 -261234
--1 -1 17900 1;
+-1 -1 300 1;
 #X floatatom 429 370 5 0 0 0 - - -;
 #X obj 461 126 vsl 32 180 30 60 0 1 empty empty empty 0 -9 0 10 -261234
--1 -1 7500 1;
+-1 -1 4500 1;
 #X floatatom 461 370 5 0 0 0 - - -;
 #X obj 493 126 vsl 32 180 30 60 0 1 empty empty empty 0 -9 0 10 -261234
--1 -1 7900 1;
+-1 -1 3200 1;
 #X floatatom 493 370 5 0 0 0 - - -;
 #X obj 525 126 vsl 32 180 30 60 0 1 empty empty empty 0 -9 0 10 -261234
--1 -1 14100 1;
+-1 -1 1300 1;
 #X floatatom 525 370 5 0 0 0 - - -;
 #X obj 557 126 vsl 32 180 30 60 0 1 empty empty empty 0 -9 0 10 -261234
--1 -1 12400 1;
+-1 -1 0 1;
 #X floatatom 557 370 5 0 0 0 - - -;
 #X obj 589 126 vsl 32 180 30 60 0 1 empty empty empty 0 -9 0 10 -261234
--1 -1 6800 1;
+-1 -1 6000 1;
 #X floatatom 589 370 5 0 0 0 - - -;
 #X obj 621 126 vsl 32 180 30 60 0 1 empty empty empty 0 -9 0 10 -261234
--1 -1 11200 1;
+-1 -1 0 1;
 #X floatatom 621 370 5 0 0 0 - - -;
 #X obj 653 126 vsl 32 180 30 60 0 1 empty empty empty 0 -9 0 10 -261234
--1 -1 8800 1;
+-1 -1 0 1;
 #X floatatom 653 370 5 0 0 0 - - -;
 #X obj 382 407 receive counter;
 #X connect 0 0 1 1;
@@ -208,7 +208,7 @@
 #X connect 68 0 19 0;
 #X coords 0 -1 1 1 560 250 1 150 90;
 #X restore 78 330 pd freq;
-#N canvas 2 137 1916 922 seq 0;
+#N canvas 0 100 1920 980 seq 0;
 #X obj 224 46 f;
 #X obj 246 46 + 1;
 #X floatatom 266 63 5 0 0 0 - - -;
@@ -233,14 +233,14 @@ numbers from 0 up to length-1 in the global variable counter;
 #X connect 7 0 0 1;
 #X coords 0 -1 1 1 85 60 1 300 100;
 #X restore 707 503 pd seq;
-#N canvas 2 119 1916 940 runlight 0;
+#N canvas 0 100 1920 980 runlight 0;
 #X obj 122 110 hradio 32 1 0 16 empty empty empty 0 -8 0 8 -204800
--1 -1 0;
+-1 -1 5;
 #X obj 122 70 receive counter;
 #X connect 1 0 0 0;
 #X coords 0 -1 1 1 560 50 1 100 100;
 #X restore 78 280 pd runlight;
-#N canvas 2 119 1916 940 loudness 0;
+#N canvas 0 100 1920 980 loudness 0;
 #X obj 101 493 f;
 #X obj 289 493 f;
 #X obj 336 493 f;
@@ -252,7 +252,7 @@ numbers from 0 up to length-1 in the global variable counter;
 #X floatatom 501 573 5 0 0 0 - - -;
 #X obj 375 432 select 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
 #X obj 173 126 vsl 32 180 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 13700 1;
+-1 -1 15100 1;
 #X floatatom 173 370 5 0 0 0 - - -;
 #X obj 480 493 f;
 #X obj 530 493 f;
@@ -263,10 +263,10 @@ numbers from 0 up to length-1 in the global variable counter;
 #X obj 780 493 f;
 #X obj 830 493 f;
 #X obj 205 126 vsl 32 180 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 11000 1;
+-1 -1 0 1;
 #X floatatom 205 370 5 0 0 0 - - -;
 #X obj 237 126 vsl 32 180 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 10300 1;
+-1 -1 0 1;
 #X floatatom 237 370 5 0 0 0 - - -;
 #X floatatom 269 370 5 0 0 0 - - -;
 #X floatatom 301 370 5 0 0 0 - - -;
@@ -283,31 +283,31 @@ numbers from 0 up to length-1 in the global variable counter;
 #X floatatom 653 370 5 0 0 0 - - -;
 #X obj 382 407 receive counter;
 #X obj 269 126 vsl 32 180 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 1900 1;
+-1 -1 0 1;
 #X obj 301 126 vsl 32 180 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 5000 1;
+-1 -1 0 1;
 #X obj 333 126 vsl 32 180 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 1200 1;
+-1 -1 0 1;
 #X obj 365 126 vsl 32 180 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 17900 1;
+-1 -1 0 1;
 #X obj 397 126 vsl 32 180 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 17900 1;
+-1 -1 0 1;
 #X obj 429 126 vsl 32 180 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 12000 1;
+-1 -1 0 1;
 #X obj 461 126 vsl 32 180 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 17900 1;
+-1 -1 0 1;
 #X obj 493 126 vsl 32 180 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 7000 1;
+-1 -1 0 1;
 #X obj 525 126 vsl 32 180 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 10400 1;
+-1 -1 0 1;
 #X obj 557 126 vsl 32 180 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 12000 1;
+-1 -1 0 1;
 #X obj 589 126 vsl 32 180 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 10500 1;
+-1 -1 0 1;
 #X obj 621 126 vsl 32 180 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 17900 1;
+-1 -1 0 1;
 #X obj 653 126 vsl 32 180 0 1 0 1 empty empty empty 0 -9 0 10 -260097
--1 -1 17900 1;
+-1 -1 0 1;
 #X text 536 573 loudness;
 #X obj 471 587 send loudness;
 #X connect 0 0 8 0;
@@ -380,7 +380,7 @@ numbers from 0 up to length-1 in the global variable counter;
 #X restore 78 30 pd loudness;
 #X obj 909 208 receive loudness;
 #X obj 885 253 *~;
-#N canvas 2 119 1916 940 envelope 0;
+#N canvas 0 100 1920 980 envelope 0;
 #X obj 130 124 hsl 180 30 0 1 0 1 empty empty attack/release -2 -8
 0 10 -257985 -1 -1 3000 1;
 #X floatatom 219 319 5 100 1000 1 tempo tempo -;
@@ -432,6 +432,7 @@ numbers from 0 up to length-1 in the global variable counter;
 #X coords 0 -1 1 1 240 120 1 100 100;
 #X restore 1175 361 pd envelope;
 #X obj 898 301 filter;
+#X obj 561 615 delaynetwork;
 #X connect 2 0 6 0;
 #X connect 2 0 7 0;
 #X connect 3 0 25 0;
@@ -442,7 +443,7 @@ numbers from 0 up to length-1 in the global variable counter;
 #X connect 7 0 4 1;
 #X connect 8 0 3 0;
 #X connect 9 0 4 0;
-#X connect 10 0 14 0;
+#X connect 10 0 28 0;
 #X connect 11 0 12 0;
 #X connect 12 0 13 0;
 #X connect 13 0 0 0;
@@ -455,3 +456,4 @@ numbers from 0 up to length-1 in the global variable counter;
 #X connect 25 0 27 0;
 #X connect 26 0 10 1;
 #X connect 27 0 10 0;
+#X connect 28 0 14 0;
