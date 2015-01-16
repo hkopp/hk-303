@@ -1,0 +1,20 @@
+#N canvas 180 206 1436 705 10;
+#X obj 115 114 vsl 30 120 50 1000 0 1 \$0-del empty empty 0 -9 0 10
+-4032 -1 -1 11000 1;
+#X obj 145 114 vsl 40 120 0 1 0 1 \$0-decay empty empty 0 -9 0 10 -204800
+-1 -1 6800 1;
+#X obj 250 417 outlet~;
+#X obj 250 56 inlet~;
+#X floatatom 330 84 5 0 0 0 - #0-del -;
+#X floatatom 345 119 5 0 0 0 - #0-decay -;
+#X obj 330 136 *~;
+#X obj 330 101 delread~ \$0-main 50;
+#X obj 330 351 delwrite~ \$0-main 1000;
+#X connect 3 0 2 0;
+#X connect 3 0 8 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 1;
+#X connect 6 0 2 0;
+#X connect 6 0 8 0;
+#X connect 7 0 6 0;
+#X coords 0 -1 1 1 100 150 1 100 100;
